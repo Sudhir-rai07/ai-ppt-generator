@@ -1,4 +1,4 @@
-import { ChartLineIcon, Home } from "lucide-react";
+import { ChartLineIcon, Home, Settings, Trash } from "lucide-react";
 
 export const data = {
     user: {
@@ -16,6 +16,14 @@ export const data = {
             title: "Templates",
             url: "/templates",
             icon: ChartLineIcon
+        },{
+            title: "Trash",
+            url: "/trash",
+            icon: Trash
+        },{
+            title: "Setting",
+            url: "/setting",
+            icon: Settings
         }
     ]
 }

@@ -14,7 +14,7 @@ const NavMain = ({ items }: {
         item?: {
             title: string
             url: string
-        }
+        }[]
     }[]
 }) => {
     const pathname = usePathname()
@@ -23,7 +23,7 @@ const NavMain = ({ items }: {
             <SidebarMenu>
                 {items.map((item, idx)=>(
                     <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild tooltip={item.title} className={`${pathname.includes(item.url) && 'bg-background-80'}`}>
+                    <SidebarMenuButton asChild tooltip={item.title} className={`${pathname.includes(item.url) && 'bg-muted'}`}>
                         <Link href={item.url} className={`text-lg ${pathname.includes(item.url) && 'font-bold'}`}>
                             {<item.icon />}{item.title}</Link>
                     </SidebarMenuButton>
