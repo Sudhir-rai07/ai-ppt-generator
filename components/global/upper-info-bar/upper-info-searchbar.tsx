@@ -10,7 +10,7 @@ const SearchBar = () => {
         type='submit'
         size={'sm'}
         variant={'ghost'}
-        className='absolute left-0 h-full rounded-l-none bg-transparent'
+        className='absolute left-0 h-full rounded-l-none bg-transparent hover:bg-none'
         >
             <Search className='h-4 w-4' />
             <span className='sr-only'>Search</span>

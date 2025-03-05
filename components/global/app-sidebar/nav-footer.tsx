@@ -34,7 +34,7 @@ const NavFooter = ({ prismaUser }: { prismaUser: User }) => {
                             </div>
 
                             <div className='w-full bg-vivid-gradient p-[1px] rounded-full'>
-                                <Button className='w-full border-vivid bg-muted hover:bg-background text-primary rounded-full font-bold'
+                                <Button className='w-full border-vivid bg-muted hover:bg-background hover:border-2 hover:border-gray-400 text-primary rounded-full font-bold'
                                     variant={'default'}
                                     size={'lg'}
                                     onClick={handleUpgrading}
@@ -42,19 +42,18 @@ const NavFooter = ({ prismaUser }: { prismaUser: User }) => {
                                     {loading ? "Upgrading..." : "Upgrade"}
                                 </Button>
                             </div>
-
                         </div>
                     }
-                    <SignedIn>
-                        <SidebarMenuButton size={'lg'}
-                            className='data-[state=open]:bg-sidebar-accent-foreground'>
-                            <UserButton />
-                            <div className='flex flex-col'>
-                                <span>{user.fullName}</span>
-                                <span className='text-sm'>{user.emailAddresses[0]?.emailAddress}</span>
-                            </div>
-                        </SidebarMenuButton>
-                    </SignedIn>
+                        <SignedIn>
+                            <SidebarMenuButton size={'lg'}
+                                className='data-[state=open]:bg-sidebar-accent-foreground'>
+                                <UserButton />
+                                <div className='flex flex-col'>
+                                    <span>{user.fullName}</span>
+                                    <span className='text-sm'>{user.emailAddresses[0]?.emailAddress}</span>
+                                </div>
+                            </SidebarMenuButton>
+                        </SignedIn>
                 </div>
             </SidebarMenuItem>
         </SidebarMenu>

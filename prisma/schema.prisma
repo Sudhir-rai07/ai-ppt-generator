@@ -38,8 +38,8 @@ model Project {
   slides     Json?
   userId     String   @db.Uuid
   outlines   String[]
-  idDeleted  Boolean  @default(false)
-  idSellable Boolean  @default(false)
+  isDeleted  Boolean  @default(false)
+  isSellable Boolean  @default(false)
   verientId  String?
   thumbnail  String?
   themeName  String   @default("light")
