@@ -3,16 +3,25 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { containerVarients, itemVarients } from '@/lib/constants'
 import { timeAgo } from '@/lib/utils'
+import useCreateAIStore from '@/store/useCreateAIStore'
 import usePromptStore from '@/store/usePromptStore'
 import { motion } from 'framer-motion'
 import React from 'react'
+import { toast } from 'sonner'
 
 const RecentPrompts = () => {
     const { prompts, setPage } = usePromptStore()
+    const {addMultipleOutline, setCurrentAiPrompt} = useCreateAIStore()
     const handleEdit = (id: string) =>{
         const prompt = prompts.find((prompt)=> prompt.id === id)
         if(prompt){
             setPage('creative-ai')
+            addMultipleOutline(prompt.outlines)
+            setCurrentAiPrompt(prompt.title)
+        } else {
+            toast.error("ERROR!", {
+                description: "Prompt not found!"
+            })
         }
     }
     return (

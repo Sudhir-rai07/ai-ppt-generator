@@ -15,8 +15,9 @@ type PropmptStore = {
     prompts: Prompt[] | []
     addPrompts: (prompt: Prompt) => void
     removePrompt: (id: string) => void
+    
 }
-const usePromptStore = create<PropmptStore>()(devtools(
+const usePromptStore = create<PropmptStore>()(
     persist(
         (set) => ({
             page: 'create', setPage: (page) => {
@@ -34,12 +35,8 @@ const usePromptStore = create<PropmptStore>()(devtools(
                 }))
             }
         }),
-
-
-    ),
-    { name: 'prompts' }
-))
-
-
+        {name:"prompts"}
+    )
+)
 
 export default usePromptStore

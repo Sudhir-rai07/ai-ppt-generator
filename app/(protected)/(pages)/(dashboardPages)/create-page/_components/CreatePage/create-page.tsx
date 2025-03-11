@@ -1,14 +1,20 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { containerVarients, CreatePageCard, itemVarients } from '@/lib/constants'
 import { Button } from '@/components/ui/button'
 import RecentPrompts from './generate-ai/recent-prompts'
+import usePromptStore from '@/store/usePromptStore'
 
 type Props = {
     onSelectOption: (option: string) => void
 }
 const CreatePage = ({ onSelectOption }: Props) => {
+    const { prompts, setPage } = usePromptStore()
+
+    useEffect(() => {
+        setPage("create")
+    }, [])
     return (
         <motion.div
             initial="hidden"
@@ -80,7 +86,7 @@ const CreatePage = ({ onSelectOption }: Props) => {
             </motion.div>
 
 
-            <RecentPrompts />
+            {prompts.length > 0 && <RecentPrompts />}
         </motion.div>
     )
 }

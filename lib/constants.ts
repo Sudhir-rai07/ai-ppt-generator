@@ -85,7 +85,7 @@ export const CreatePageCard = [
         highlight: true
     }, {
         title: "Start from",
-        highlightedText: "Template",
+        highlightedText: "Scratch",
         description: "Write a prompt and leave everything else for us to handle",
         type: "create-scratch",
     },

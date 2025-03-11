@@ -1,22 +1,41 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 import usePromptStore from '@/store/usePromptStore'
 import CreatePage from './CreatePage/create-page'
+import CreativeAI from './CreatePage/generate-ai/CreativeAI'
 
 const RenderPage = () => {
   const router = useRouter()
   const { page, setPage } = usePromptStore()
 
+  useEffect(()=>{
+    setPage("create")
+  }, [])
+
+  const handleBack = () =>{
+    setPage("create")
+  }
+
+  const handleSelectOption = (option: string) =>{
+    if(option === 'template'){
+      router.push("/templates")
+    } else if(option === 'create-scratch'){
+      setPage("create-scratch")
+    } else {
+      setPage("creative-ai")
+    }
+  }
+
   const renderStep = () => {
     switch (page) {
       case 'create':
-        return <CreatePage />
+        return <CreatePage onSelectOption={handleSelectOption}/>
+        case 'creative-ai':
+          return <CreativeAI onBack={handleBack}/>
       case 'create-scratch':
         return <>b</>
-      case 'creative-ai':
-        return <>v</>
     }
   }
   return (
