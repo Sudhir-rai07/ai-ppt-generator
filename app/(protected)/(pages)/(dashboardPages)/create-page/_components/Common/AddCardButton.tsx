@@ -27,12 +27,12 @@ const AddCardButton = ({ onAddCard }: Props) => {
                 {showGap &&
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        animate={{ opacity: 1, y: 15 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2, delay: 0.1 }}
-                        className='absolute inset-0 flex items-center justify-center'
+                        className='flex items-center justify-center'
                     >
-                        <div className='w-[40%] h-px bg-primary'>
+                        <div className='w-[40%] h-px bg-primary flex items-center justify-center'>
                             <Button
                                 variant={"outline"}
                                 size={'sm'}
@@ -42,7 +42,7 @@ const AddCardButton = ({ onAddCard }: Props) => {
                             >
                                 <Plus className='w-4 h-4 text-black' />
                             </Button>
-                            <div className='w-[40%] h-px bg-primary'/>
+                            {/* <div className='w-[40%] h-px bg-primary'/> */}
                         </div>
                     </motion.div>}
             </AnimatePresence>

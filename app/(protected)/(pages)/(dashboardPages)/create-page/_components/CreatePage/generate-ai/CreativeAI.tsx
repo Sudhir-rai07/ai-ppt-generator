@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { containerVarients, itemVarients } from '@/lib/constants'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft, Loader, Loader2, RotateCcw } from 'lucide-react'
@@ -14,6 +14,12 @@ import CardList from '../../Common/CardList'
 import usePromptStore from '@/store/usePromptStore'
 import RecentPrompts from './recent-prompts'
 import { toast } from 'sonner'
+import { generateCreativePrompt } from '@/actions/chatgpt'
+import { OutlineCard } from '@/lib/types'
+import { v4 as uuid } from 'uuid'
+import { createProject } from '@/actions/project'
+import { useSlideStore } from '@/store/useSlideStore'
+import { set } from 'date-fns'
 
 type Props = {
     onBack: () => void
@@ -23,11 +29,11 @@ const CreativeAI = ({ onBack }: Props) => {
 
     const router = useRouter()
     const { currentAiPrompt,
-            setCurrentAiPrompt,
-            outlines,
-            resetOutlines,
-            addOutline,
-            addMultipleOutline
+        setCurrentAiPrompt,
+        outlines,
+        resetOutlines,
+        addOutline,
+        addMultipleOutline
     } = useCreateAIStore()
     const [editingCard, setEditingCard] = useState<string | null>(null)
     const [isGenerating, setIsGenerating] = useState(false)
@@ -35,6 +41,7 @@ const CreativeAI = ({ onBack }: Props) => {
     const [editText, setEditText] = useState('')
     const [noOfCards, setNoOfCards] = useState(0)
     const { prompts, addPrompts } = usePromptStore()
+    const { setProject } = useSlideStore()
 
 
     const handleBack = () => {
@@ -51,8 +58,8 @@ const CreativeAI = ({ onBack }: Props) => {
     }
 
     const generateOutlines = async () => {
-        if(currentAiPrompt === ""){
-            toast.error("Error",{
+        if (currentAiPrompt === "") {
+            toast.error("Error", {
                 description: "Please enter a prompt to generate an outline"
             })
             return
@@ -61,13 +68,78 @@ const CreativeAI = ({ onBack }: Props) => {
         setIsGenerating(true)
 
         const res = await generateCreativePrompt(currentAiPrompt)
+        if (res.status === 200 && res?.data?.outlines) {
+            const cardsData: OutlineCard[] = []
+            res?.data?.outlines.map((outline: string, index: number) => {
+                const neeCard = {
+                    id: uuid(),
+                    title: outline,
+                    order: index + 1
+                }
+                cardsData.push(neeCard)
+            })
 
-        //WIP: use openAI and complete this stuff 
-    } 
+            addMultipleOutline(cardsData)
+            setNoOfCards(cardsData.length)
+            toast.success("Success", {
+                description: "Outlines generated successfully"
+            })
 
-    const handleGenerate = () => {
-
+            setIsGenerating(false)
+        } else {
+            toast.error("Error", {
+                description: "Failed to generate outlines. Please try again"
+            })
+            setIsGenerating(false)
+        }
+        setIsGenerating(false)
     }
+
+    const handleGenerate = async () => {
+        setIsGenerating(true)
+        if (outlines.length === 0) {
+            toast.error("Error", {
+                description: "Please add at least one card to generate slides"
+            })
+            return
+        }
+
+        try {
+            const res = await createProject(currentAiPrompt, outlines.slice(0, noOfCards))
+
+            if (res.status !== 200 || !res.data) {
+                toast.error("Error", {
+                    description: res.error || "Failed to create project"
+                })
+                return
+            }
+
+            router.push(`/presentation/${res.data?.id}/select-theme`)
+            setProject(res.data)
+
+            addPrompts({
+                id: uuid(),
+                title: currentAiPrompt || outlines[0].title,
+                outlines: outlines,
+                createdAt: new Date().toISOString()
+            })
+
+            toast.success("Success",
+                { description: "Project created successfully" })
+
+            setCurrentAiPrompt('')
+            resetOutlines()
+        } catch (error) {
+            console.log("ERROR GENERATING", error)
+            toast.error("Error", {
+                description: "Failed to generate slides",
+            })
+        } finally {
+            setIsGenerating(false)
+        }
+    }
+
+    useEffect(() => { setNoOfCards(outlines.length) }, [outlines.length])
     return (
         <motion.div className='space-y-6 w-full mx-auto px-4 sm:px-6 lg:px-8' variants={containerVarients}
             initial="hidden"
@@ -158,44 +230,44 @@ const CreativeAI = ({ onBack }: Props) => {
                     disabled={isGenerating}
                 >
                     {isGenerating ? (
-                        <Loader className='h-4 w-4 animate-spin' />
+                        <> <Loader className='h-4 w-4 animate-spin' /> {"Generating"}</>
                     ) : ("Genetate outline")}
                 </Button>
             </div>
 
             <CardList outlines={outlines}
-                      addOutline={addOutline}
-                      addMultipleOutlines={addMultipleOutline}
-                      editingCard={editingCard}  
-                      selectedCard={selectedCard}
-                      editText={editText}
-                      onEditChange={setEditText}
-                      onCardSelect={setSelectedCard}
-                      setEditText={setEditText}
-                      setEditingCard={setEditingCard}
-                      setSelectedCard={setSelectedCard}
-                      onCardDoubleClick={(id, title)=>{
-                        setEditingCard(id)
-                        setEditText(title)
-                      }}
-                      />
+                addOutline={addOutline}
+                addMultipleOutlines={addMultipleOutline}
+                editingCard={editingCard}
+                selectedCard={selectedCard}
+                editText={editText}
+                onEditChange={setEditText}
+                onCardSelect={setSelectedCard}
+                setEditText={setEditText}
+                setEditingCard={setEditingCard}
+                setSelectedCard={setSelectedCard}
+                onCardDoubleClick={(id, title) => {
+                    setEditingCard(id)
+                    setEditText(title)
+                }}
+            />
 
-                      {outlines.length > 0 && 
-                      <Button
-                       className='w-full'
-                       onClick={handleGenerate}
-                       disabled={isGenerating }
-                      >
-                        {isGenerating ? (
-                            <>
+            {outlines.length > 0 &&
+                <Button
+                    className='w-full'
+                    onClick={handleGenerate}
+                    disabled={isGenerating}
+                >
+                    {isGenerating ? (
+                        <>
                             <Loader2 className='animate-spin mr-2' /> Generating...
-                            </>
-                        ): (
-                            'Generate '
-                        )}
-                      </Button>}
+                        </>
+                    ) : (
+                        'Generate '
+                    )}
+                </Button>}
 
-                      {prompts?.length > 0 && <RecentPrompts />}
+            {prompts?.length > 0 && <RecentPrompts />}
         </motion.div>
     )
 }

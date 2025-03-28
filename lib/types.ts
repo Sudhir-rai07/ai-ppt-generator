@@ -67,7 +67,7 @@ export interface Theme {
     accentColor: string;
     gradientBackground?: string;
     sidebarColor?: string;
-    navbarColor: string;
+    navbarColor?: string;
     type: 'light' | 'dark';
 }
 

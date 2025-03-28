@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { useRef, useState } from 'react'
 import Card from './Card'
 import AddCardButton from './AddCardButton'
+import { add } from 'date-fns'
 
 type Props = {
     outlines: OutlineCard[]
@@ -104,7 +105,7 @@ const CardList = ({
         dragOffsetY.current = e.clientY - rect.top
 
         const draggedEl = e.currentTarget.cloneNode(true) as HTMLElement
-        
+
         draggedEl.style.position = 'absolute'
         draggedEl.style.top = '-1000px'
         draggedEl.style.opacity = '0.8'
@@ -112,11 +113,11 @@ const CardList = ({
         document.body.appendChild(draggedEl)
         e.dataTransfer.setDragImage(draggedEl, 0, dragOffsetY.current)
 
-        setTimeout(()=>{
+        setTimeout(() => {
             setDragOverIndex(outlines.findIndex((c) => c.id === card.id))
             document.body.removeChild(draggedEl)
         }, 0)
-    } 
+    }
 
     const onDragEnd = () => {
         setDraggedItem(null)
@@ -124,14 +125,14 @@ const CardList = ({
     }
 
     const getDragOverStyles = (cardIndex: number) => {
-        if(dragOverIndex === null || draggedItem === null) return {}
-        if(cardIndex === dragOverIndex) {
-                return {
-                    borderTop: '2px solid #000',
-                    marginTop: '0.5rem',
-                    transition: 'margin 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)'
-                }
-        } else if(cardIndex === dragOverIndex -1){
+        if (dragOverIndex === null || draggedItem === null) return {}
+        if (cardIndex === dragOverIndex) {
+            return {
+                borderTop: '2px solid #000',
+                marginTop: '0.5rem',
+                transition: 'margin 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)'
+            }
+        } else if (cardIndex === dragOverIndex - 1) {
             return {
                 borderBottom: '2px solid #000',
                 margiinBottom: '0.5rem',
@@ -140,6 +141,27 @@ const CardList = ({
         }
 
         return {}
+    }
+
+    const onAddCard = (index?: number) => {
+        const newCard: OutlineCard = {
+            id: Math.random().toString(36).substr(2, 9),
+            title: editText || "New Section",
+            order: (index !== undefined ? index + 1 : outlines.length) + 1
+        }
+        const updatedCards = index !== undefined ?
+            [
+                ...outlines.slice(0, index + 1),
+                newCard,
+                ...outlines
+                    .slice(index + 1)
+                    .map((card) => ({ ...card, order: card.order + 1 }))
+            ]
+            :
+            [...outlines, newCard]
+
+        addMultipleOutlines(updatedCards)
+        setEditText('')
     }
     return (
         <motion.div
@@ -186,9 +208,9 @@ const CardList = ({
                             dragOverStyles={getDragOverStyles(idx)}
                         />
 
-                         {/* <AddCardButton 
-                        onAddCard={()=> onAddCard(idx)}
-                        /> */}
+                        <AddCardButton
+                            onAddCard={() => onAddCard(idx)}
+                        />
                     </React.Fragment>
                 ))}
             </AnimatePresence>

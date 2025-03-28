@@ -1,16 +1,19 @@
 'use client'
-import { JsonValue } from '@prisma/client/runtime/library'
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { itemVarients, themes } from '@/lib/constants'
-import { useSlideStore } from '@/store/useSlideStore'
-import { useRouter } from 'next/navigation'
-import ThumbnailPreview from './thumbnail-preview'
-import { timeAgo } from '@/lib/utils'
-import AlertDialogBox from '../alert-dialog-box'
-import { Button } from '@/components/ui/button'
-import { toast } from 'sonner'
-import { deleteProject, recoverProject } from '@/actions/project'
+
+import { deleteProject, recoverProject } from "@/actions/project"
+import { itemVarients, themes } from "@/lib/constants"
+import { timeAgo } from "@/lib/utils"
+import { useSlideStore } from "@/store/useSlideStore"
+import { JsonValue } from "@prisma/client/runtime/library"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
+import { toast } from "sonner"
+import AlertDialogBox from "../alert-dialog-box"
+import { Button } from "@/components/ui/button"
+import {motion} from 'framer-motion'
+
+
+
 type Props = {
     projectId: string
     title: string

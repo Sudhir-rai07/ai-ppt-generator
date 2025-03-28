@@ -59,7 +59,7 @@ const Card = ({
                 onDragOver={onDragOver}
                 {...dragHandlers}
             >
-                <UICard className={`p-4 cursor-grab active:cursor-grabbing bg-primary ${isEditing || isSelected ? "border-primary bg-transparent" : ""}`}
+                <UICard className={`p-4 cursor-grab active:cursor-grabbing bg-primary/10 ${isEditing || isSelected ? "border-primary bg-transparent" : ""}`}
                     onClick={onCardClick}
                     onDoubleClick={onCardDoubleClick}
                 >
@@ -75,7 +75,7 @@ const Card = ({
                             />
                         ) : (
                             <div className='flex items-center gap-2'>
-                                <span className={`text-base sm:text-lg py-1 px-4 rounded-xl bg-primary-20 ${isEditing || isSelected ? "bg-secondary dark:text-black" : ""
+                                <span className={`text-base sm:text-lg py-1 px-4 rounded-xl bg-primary/20 ${isEditing || isSelected ? "bg-secondary dark:text-white" : ""
                                     }`}>
                                     {card.order}
                                 </span>

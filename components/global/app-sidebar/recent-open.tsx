@@ -1,13 +1,14 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
-import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
-import { useSlideStore } from '@/store/useSlideStore'
-import { Project } from '@prisma/client'
-import { JsonValue } from '@prisma/client/runtime/library'
-import { useRouter } from 'next/navigation'
-import React from 'react'
-import { toast } from 'sonner'
+import { Button } from "@/components/ui/button"
+import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
+import { useSlideStore } from "@/store/useSlideStore"
+import { Project } from "@prisma/client"
+import { JsonValue } from "@prisma/client/runtime/library"
+import { useRouter } from "next/navigation"
+import { toast } from "sonner"
+
+
 type Props = {
     recentProjects: Project[]
 }
@@ -34,7 +35,7 @@ const RecentOpen = ({ recentProjects }: Props) => {
         recentProjects.length > 0 ?
         <SidebarGroup>
             <SidebarGroupLabel>Recent Open</SidebarGroupLabel>
-            <SidebarMenu>
+            <SidebarMenu key={1}>
                 {recentProjects.length > 0 ?
                     (
                         recentProjects.map((project, idx) => (
@@ -48,8 +49,7 @@ const RecentOpen = ({ recentProjects }: Props) => {
                         ))
                     )
                     :
-                    (<>
-                    </>)}
+                    ""}
             </SidebarMenu>
         </SidebarGroup> : ""
     )

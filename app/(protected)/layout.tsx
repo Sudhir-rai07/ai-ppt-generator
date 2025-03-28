@@ -1,4 +1,4 @@
-export const dynamic = 'force-dunamic' // Force refresh the layout page for authentication every time
+export const dynamic = 'force-dynamic' // Force refresh the layout page for authentication every time
 
 import { onAuthenticateUser } from '@/actions/user'
 import { redirect } from 'next/navigation'

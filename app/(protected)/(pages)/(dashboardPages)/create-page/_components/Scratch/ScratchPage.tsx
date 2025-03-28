@@ -13,6 +13,8 @@ import { Input } from '@/components/ui/input'
 import CardList from '../Common/CardList'
 import { OutlineCard } from '@/lib/types'
 import { v4 as uuid } from 'uuid'
+import { toast } from 'sonner'
+import { createProject } from '@/actions/project'
 
 type Props = {
     onBack: () => void
@@ -21,6 +23,7 @@ type Props = {
 const ScratchPage = ({ onBack }: Props) => {
     const router = useRouter()
     const { outlines, resetOutlines, addOutline, addMultipleOutlines } = useScratchStore()
+    const { setProject } = useSlideStore()
     const [editText, setEditText] = useState('')
     const [editingCard, setEditingCard] = useState<string | null>(null)
     const [selectedCard, setSelectedCard] = useState<string | null>(null)
@@ -44,6 +47,31 @@ const ScratchPage = ({ onBack }: Props) => {
 
         setEditText('')
         addOutline(newCard)
+    }
+
+    const handleGenerate = async () => {
+        if (outlines.length === 0) {
+            toast.error("Error", { description: "Please add at least one card to generate slides" })
+            return
+        }
+
+        const res = await createProject(outlines?.[0].title, outlines)
+
+        if (res.status !== 200) {
+            toast.error("Error", { description: res.error || "Failed to create project" })
+            return
+        }
+
+        if (res.data) {
+            setProject(res.data)
+            resetOutlines()
+            toast.success("Success", { description: "Project created successfully" })
+            router.push(`/presentations/${res.data.id}/select-theme`)
+        } else {
+            toast.error("Error", { description: "Failed to create project" })
+        }
+
+
     }
     return (
         <motion.div
@@ -86,7 +114,7 @@ const ScratchPage = ({ onBack }: Props) => {
                                             idx + 1
                                         )
                                     })
-                                        .map((num) => (
+                                    .map((num) => (
                                             <SelectItem key={num}
                                                 value={num.toString()}
                                                 className='font-semibold'
@@ -129,19 +157,19 @@ const ScratchPage = ({ onBack }: Props) => {
             <Button
                 onClick={handleAddCard}
                 variant={'secondary'}
-                className='w-full bg-primary-10'
+                className='w-full bg-primary/10'
             >
                 Add Card
             </Button>
 
-             {outlines?.length > 0 && (
-                <Button 
+            {outlines?.length > 0 && (
+                <Button
                     className='w-full'
-                    // onClick={handleGenerate}
+                onClick={handleGenerate} 
                 >
                     Generate PPT
                 </Button>
-             )}
+            )}
         </motion.div>
     )
 }

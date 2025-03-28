@@ -1,16 +1,18 @@
-import { Project } from '@prisma/client'
-import React from 'react'
-import { motion } from 'framer-motion'
-import { containerVarients } from '@/lib/constants'
-import ProjectCard from '../project-card'
+'use client'
+
+import { containerVarients } from "@/lib/constants"
+import { Project } from "@prisma/client"
+import ProjectCard from "../project-card"
+import {motion} from 'framer-motion'
+
 
 type Props = {
   project: Project[]
 }
-const Projects = ({ project }: Props) => {
+export const Projects = ({ project }: Props) => {
   return (
     <motion.div
-      className='gird grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'
+      className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'
       variants={containerVarients}
       initial='hidden'
       animate="visible"
