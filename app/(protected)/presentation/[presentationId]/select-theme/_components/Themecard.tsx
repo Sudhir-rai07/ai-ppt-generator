@@ -24,7 +24,7 @@ const Themecard = ({
 
     const variants = {
         left: {
-            hidden: { opacity: 0, x: '-50', y: '-50', scale: 0.9, rotate: 0 },
+            hidden: { opacity: 0, x: '-50%', y: '-50%', scale: 0.9, rotate: 0 },
             visible: {
                 opacity: 1,
                 x: '-25%',
@@ -40,7 +40,7 @@ const Themecard = ({
             },
         },
         right: {
-            hidden: { opacity: 0, x: '-50', y: '-50', scale: 0.9, rotate: 0 },
+            hidden: { opacity: 0, x: '-50%', y: '-50%', scale: 0.9, rotate: 0 },
             visible: {
                 opacity: 1,
                 x: '25%',
@@ -75,13 +75,14 @@ const Themecard = ({
             initial="hidden"
             animate={controls}
             variants={variants[varient]}
-            className='absolute w-full max-w-3xl '
+            className='absolute w-full max-w-3xl'
+            style={{zIndex: varient === 'main' ? 10 : 0}}
         >
             <Card
                 className='h-full shadow-2xl backdrop-blur-sm'
                 style={{
                     backgroundColor: theme.slideBackgroundColor,
-                    border: `1px solid ${theme.accentColor}`
+                    border: `1px solid ${theme.accentColor}20`
                 }}
             >
                 <div className='flex flex-col md:flex-row'>
@@ -90,7 +91,7 @@ const Themecard = ({
                             <h2 className='text-3xl font-bold tracking-tight' style={{ color: theme.accentColor }}>
                                 {title}
                             </h2>
-                            <p className='text-lg'>
+                            <p className='text-lg' style={{color: `${theme.accentColor}90`}}>
                                 {description}
                             </p>
                         </div>

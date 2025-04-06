@@ -66,7 +66,7 @@ const ScratchPage = ({ onBack }: Props) => {
             setProject(res.data)
             resetOutlines()
             toast.success("Success", { description: "Project created successfully" })
-            router.push(`/presentations/${res.data.id}/select-theme`)
+            router.push(`/presentation/${res.data.id}/select-theme`)
         } else {
             toast.error("Error", { description: "Failed to create project" })
         }

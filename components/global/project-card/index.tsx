@@ -124,7 +124,7 @@ const ProjectCard = ({
     return (
         <motion.div
             variants={itemVarients}
-            className={`group w-full flex flex-col gap-y-3 rounded-xl p-3 transition-colors ${!isDeleted && 'hover:bg-muted/50'}`}
+            className={`group w-full flex flex-col gap-y-3 rounded-xl p-3 transition-colors bg-muted/50 ${!isDeleted && 'hover:bg-muted'}`}
         >
             <div className='relative aspect-[16/10] overflow-hidden rounded-lg cursor-pointer' onClick={handleNavigation}>
 

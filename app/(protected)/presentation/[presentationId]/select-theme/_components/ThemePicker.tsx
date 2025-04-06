@@ -4,12 +4,12 @@ import { generateLayouts } from '@/actions/chatgpt'
 import { Button } from '@/components/ui/button'
 import { Theme } from '@/lib/types'
 import { useSlideStore } from '@/store/useSlideStore'
-import { ScrollArea } from '@radix-ui/react-scroll-area'
 import { Loader2, Wand2 } from 'lucide-react'
 import { useParams, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
 import { motion } from 'framer-motion'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 
 type Props = {
@@ -67,11 +67,10 @@ const ThemePicker = ({
     } finally {
       setLoading(false)
     }
-
   }
 
   return (
-    <div className='w-[400px] overflow-hidden sticky top-0 h-screen flex flex-col'
+    <div className='w-[400px] overflow-x-hidden sticky top-0 h-screen flex flex-col'
       style={{
         backgroundColor: selectedTheme.sidebarColor || selectedTheme.backgroundColor,
         borderLeft: `1px solid ${selectedTheme.accentColor}20`

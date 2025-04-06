@@ -179,8 +179,8 @@ const ThemePreview = () => {
             <Themecard
               title='Quick Start'
               description='Get up an drunning in no time'
-              content={leftCardContent}
-              varient='right'
+              content={mainCardContent}
+              varient='main'
               theme={selectedTheme}
               controls={controls}
             />
@@ -188,8 +188,8 @@ const ThemePreview = () => {
             <Themecard
               title='Quick Start'
               description='Get up an drunning in no time'
-              content={leftCardContent}
-              varient='main'
+              content={rightCardContent}
+              varient='right'
               theme={selectedTheme}
               controls={controls}
             />
@@ -198,7 +198,6 @@ const ThemePreview = () => {
       </div>
 
       <ThemePicker
-
         selectedTheme={selectedTheme}
         themes={themes}
         onThemeSelect={applyTheme}

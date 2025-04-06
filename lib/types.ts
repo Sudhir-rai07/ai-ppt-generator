@@ -1,6 +1,6 @@
 export interface Slide {
     id: string;
-    slidename: string;
+    slideName: string;
     type: string;
     content: ContentItem;
     slideOrder: number;
@@ -42,8 +42,8 @@ export interface ContentItem {
     id: string
     type: ContentType;
     name: string;
-    content: ContentItem[] | string | string []
-    initialRows: number
+    content: ContentItem[] | string | string [] | string[][]
+    initialRows?: number
     initialColumns?: number
     restrictToDrop?: boolean
     columns?: number
@@ -75,4 +75,11 @@ export interface OutlineCard {
     title: string;
     id: string;
     order: number
+}
+
+export interface LayoutSlides  {
+    slideName: string;
+    content: ContentItem;
+    className?: string;
+    type: string
 }

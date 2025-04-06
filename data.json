@@ -1,0 +1,201 @@
+[
+    {
+        "type": "blank-card",
+        "content": {
+            "id": "c3ab4d08-ef12-4a2c-a0a3-9f30e5b4c8e8",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "f1e96e8b-d3e8-4f29-9e2d-8c3a1ba0de2e",
+                    "name": "Title",
+                    "type": "title",
+                    "content": "",
+                    "placeholder": "Untitled Card"
+                }
+            ]
+        },
+        "className": "p-8 mx-auto flex justify-center items-center min-h-[200px]",
+        "slideName": "Blank card"
+    },
+    {
+        "type": "accentLeft",
+        "content": {
+            "id": "a4d3d3a1-7d12-4c89-a243-3e2e5dcbbd89",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "b8f6a9f1-4b74-4d7e-93f8-fc7a8b1d2f84",
+                    "name": "Resizable column",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "1b7e5f5e-b7f4-4d9e-806c-6c1e4ae3b3a9",
+                            "alt": "A professional handshake symbolizing trust and respect",
+                            "name": "Image",
+                            "type": "image",
+                            "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-kBZmR849LPP8rayy5G1ENNxj/user-2i9ZxLqdEHtCnsln6t1TPU8t/img-jzGTxBVSkfEOmWGYf8S2PlFj.png?st=2025-04-05T04%3A17%3A23Z&se=2025-04-05T06%3A17%3A23Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-05T05%3A17%3A23Z&ske=2025-04-06T05%3A17%3A23Z&sks=b&skv=2024-08-04&sig=lSRUCJLG4HsykGMHyspjvDzMXZYxaLVNOBAuAgbIwso%3D"
+                        },
+                        {
+                            "id": "c4d2e8d1-9f0b-4a57-8788-7b6e9a3c2f3b",
+                            "name": "Column",
+                            "type": "column",
+                            "content": [
+                                {
+                                    "id": "e1f0a8d1-b8c4-4f2e-9c68-4b5e9e2c7b1a",
+                                    "name": "Heading1",
+                                    "type": "heading1",
+                                    "content": "",
+                                    "placeholder": "Develop strong personal values"
+                                },
+                                {
+                                    "id": "a7c9d1e2-5f0b-4a2f-9c68-7b1e9c3d6f4a",
+                                    "name": "Paragraph",
+                                    "type": "paragraph",
+                                    "content": "",
+                                    "placeholder": "Building trust and respect starts with integrity and personal values."
+                                }
+                            ],
+                            "className": "w-full h-full p-8 flex justify-center items-center",
+                            "placeholder": "Values and Trust"
+                        }
+                    ],
+                    "restrictToDrop": true
+                }
+            ],
+            "restrictDropTo": true
+        },
+        "className": "min-h-[300px]",
+        "slideName": "Accent left"
+    },
+    {
+        "type": "twoColumnsWithHeadings",
+        "content": {
+            "id": "f3d2e1c8-7f9b-4a4e-8c2f-4d1e9c7b6f8a",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "c1d7e9f3-2b4f-4a2e-8c9b-7f6e1d2c4a3b",
+                    "name": "Resizable column",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "e2f8d1c4-5b9f-4a7e-8c2b-7f3e1d9c4a5b",
+                            "name": "Heading2",
+                            "type": "heading2",
+                            "content": "",
+                            "placeholder": "Pursue Education"
+                        },
+                        {
+                            "id": "b3c7d2e1-9f4a-4a2f-8c9b-6f7e1d2c4a5b",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "",
+                            "placeholder": "Continuous self-improvement builds your knowledge and skills."
+                        }
+                    ]
+                },
+                {
+                    "id": "a9c7d1e5-4b2f-4a7e-8c9b-6f3e1d9c2a5b",
+                    "name": "Resizable column",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "e8f1d2c7-9b4a-4a2e-8c9b-7f6e1d2c4a3b",
+                            "name": "Heading2",
+                            "type": "heading2",
+                            "content": "",
+                            "placeholder": "Expand Your Skills"
+                        },
+                        {
+                            "id": "b4c7d2e1-9f5a-4b2e-9c7b-6f3e1d2c7a5b",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "",
+                            "placeholder": "Seek opportunities for growth through education and training."
+                        }
+                    ]
+                }
+            ]
+        },
+        "className": "min-h-[400px]",
+        "slideName": "Two columns with headings"
+    },
+    {
+        "type": "threeColumns",
+        "content": {
+            "id": "c8d2f1e7-9f4b-4a7e-9c2b-6f3e1d9c4a7b",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "e7c1d2f9-5b4a-4a2f-9c7b-6f3e1d2c7a5b",
+                    "name": "Column",
+                    "type": "column",
+                    "content": [
+                        {
+                            "id": "b1e7c2d9-4a5f-4a2e-9c7b-6f3e1d2c8a5b",
+                            "name": "Heading3",
+                            "type": "heading3",
+                            "content": "",
+                            "placeholder": "Build Networks"
+                        },
+                        {
+                            "id": "e9d7c1f4-5a2b-4a7e-8c9b-7f3e1d2c4a5b",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "",
+                            "placeholder": "Engage with your community to create meaningful relationships."
+                        }
+                    ]
+                },
+                {
+                    "id": "f7d1e9c4-5b2f-4a7e-9c7b-6f3e1d2c7a5b",
+                    "name": "Column",
+                    "type": "column",
+                    "content": [
+                        {
+                            "id": "b5e7c2d9-4a2f-4a7e-9c7b-6f3e1d2c9a5b",
+                            "name": "Heading3",
+                            "type": "heading3",
+                            "content": "",
+                            "placeholder": "Volunteer"
+                        },
+                        {
+                            "id": "e9c7d2f1-5b9a-4a7e-8c9b-7f3e1d2c4a7b",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "",
+                            "placeholder": "Contribute positively by helping others and being socially responsible."
+                        }
+                    ]
+                },
+                {
+                    "id": "a9c7e1d2-4b5f-4a7e-9c7b-6f3e1d2c7a5b",
+                    "name": "Column",
+                    "type": "column",
+                    "content": [
+                        {
+                            "id": "f9e7c2d1-5b4a-4a2e-9c7b-6f3e1d2c8a5b",
+                            "name": "Heading3",
+                            "type": "heading3",
+                            "content": "",
+                            "placeholder": "Professionalism"
+                        },
+                        {
+                            "id": "b7d9c2e1-4a5f-4a7e-9c7b-6f3e1d2c8a5b",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "",
+                            "placeholder": "Always maintain a professional and respectful demeanor."
+                        }
+                    ]
+                }
+            ]
+        },
+        "className": "min-h-[400px]",
+        "slideName": "Three columns"
+    }
+]

@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
       pathname: '/**'
     }, {
       protocol: 'https',
-      hostname: 'oaidalleapiprodscus.bolb.core.windows.net',
+      hostname: 'oaidalleapiprodscus.blob.core.windows.net',
       port: '',
       pathname: '/**'
     }

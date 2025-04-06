@@ -1,0 +1,285 @@
+[
+    {
+        "id": "1d3e2c4b-8f7c-4d7d-9e44-9d7c7af4bd1a",
+        "type": "imageAndText",
+        "content": {
+            "id": "2b6e3f7a-8e2d-4b12-8d1d-7c4f2b4b9d1e",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "a1c2e3d4-5f6b-7g8h-9i10-11j12k13l14m",
+                    "name": "Image and text",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "n1o2p3q4-5r6s7t8u9v10",
+                            "alt": "Lush green forest with sunlight filtering through trees",
+                            "name": "Nature Image",
+                            "type": "image",
+                            "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-kBZmR849LPP8rayy5G1ENNxj/user-2i9ZxLqdEHtCnsln6t1TPU8t/img-xkofOfYN5kaAdabqdZpuv7JL.png?st=2025-04-01T08%3A42%3A51Z&se=2025-04-01T10%3A42%3A51Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-31T21%3A18%3A57Z&ske=2025-04-01T21%3A18%3A57Z&sks=b&skv=2024-08-04&sig=88wC5SCXgxEMwQ5pC8PM0bMuQqOxTJRmq1fC88BaShU%3D",
+                            "className": "rounded-md"
+                        },
+                        {
+                            "id": "x1y2z3a4-5b6c7d8e9f10",
+                            "name": "Text Column",
+                            "type": "column",
+                            "content": [
+                                {
+                                    "id": "g1h2i3j4-5k6l7m8n9o10",
+                                    "name": "Heading",
+                                    "type": "heading1",
+                                    "content": "The Importance of Nature",
+                                    "placeholder": "Heading1"
+                                },
+                                {
+                                    "id": "p1q2r3s4-5t6u7v8w9x10",
+                                    "name": "Paragraph",
+                                    "type": "paragraph",
+                                    "content": "Nature is the foundation of life on Earth. It provides oxygen, water, food, and countless resources essential for our survival.",
+                                    "placeholder": "Start typing here"
+                                }
+                            ],
+                            "className": "p-6"
+                        }
+                    ],
+                    "className": "border rounded-lg shadow-lg"
+                }
+            ]
+        },
+        "className": "min-h-[300px] p-10 mx-auto flex justify-center items-center bg-green-100",
+        "slideName": "Nature's Vital Role"
+    },
+    {
+        "id": "2a4c6e7f-8b9d-1f2g-3h4i-5j6k7l8m9n10",
+        "type": "textAndImage",
+        "content": {
+            "id": "a1b2c3d4-e5f6g7h8i9j10",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "k1l2m3n4-o5p6q7r8s9t10",
+                    "name": "Text and image",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "u1v2w3x4-y5z6a7b8c9d10",
+                            "name": "Text Column",
+                            "type": "column",
+                            "content": [
+                                {
+                                    "id": "e1f2g3h4-i5j6k7l8m9n10",
+                                    "name": "Heading",
+                                    "type": "heading1",
+                                    "content": "Challenges We Face",
+                                    "placeholder": "Heading1"
+                                },
+                                {
+                                    "id": "o1p2q3r4-s5t6u7v8w9x10",
+                                    "name": "Paragraph",
+                                    "type": "paragraph",
+                                    "content": "Deforestation, pollution, and climate change are disrupting ecosystems, endangering countless species, and impacting human health.",
+                                    "placeholder": "Start typing here"
+                                }
+                            ],
+                            "className": "p-6"
+                        },
+                        {
+                            "id": "y1z2a3b4-c5d6e7f8g9h10",
+                            "alt": "Polluted river with plastic bottles and waste floating",
+                            "name": "Environmental Challenges Image",
+                            "type": "image",
+                            "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-kBZmR849LPP8rayy5G1ENNxj/user-2i9ZxLqdEHtCnsln6t1TPU8t/img-Ba8666y8ARAr2QSM95wWHmAy.png?st=2025-04-01T08%3A42%3A52Z&se=2025-04-01T10%3A42%3A52Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T08%3A45%3A09Z&ske=2025-04-02T08%3A45%3A09Z&sks=b&skv=2024-08-04&sig=df/9OI6%2BpMxpkvNzwhSTx1vWehOfj1NiCbPtz7GBi4I%3D",
+                            "className": "rounded-md"
+                        }
+                    ],
+                    "className": "border rounded-lg shadow-lg"
+                }
+            ]
+        },
+        "className": "min-h-[300px] p-10 mx-auto flex justify-center items-center bg-gray-100",
+        "slideName": "Environmental Challenges"
+    },
+    {
+        "id": "3b5d7f8g-1h2i-3j4k-5l6m7n8o9p10",
+        "type": "twoColumnsWithHeadings",
+        "content": {
+            "id": "q1r2s3t4-u5v6w7x8y9z10",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "a1b2c3d4-e5f6g7h8i9j10",
+                    "name": "Title",
+                    "type": "title",
+                    "content": "Human Impact on Nature",
+                    "placeholder": "Untitled Card"
+                },
+                {
+                    "id": "k1l2m3n4-o5p6q7r8s9t10",
+                    "name": "Text and image",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "u1v2w3x4-y5z6a7b8c9d10",
+                            "name": "Column",
+                            "type": "column",
+                            "content": [
+                                {
+                                    "id": "g1h2i3j4-k5l6m7n8o9p10",
+                                    "name": "Heading",
+                                    "type": "heading3",
+                                    "content": "Ecosystem Disruption",
+                                    "placeholder": "Heading 3"
+                                },
+                                {
+                                    "id": "q1r2s3t4-u5v6w7x8y9z10",
+                                    "name": "Paragraph",
+                                    "type": "paragraph",
+                                    "content": "Urbanization, industrial activities, and resource exploitation are leading to habitat destruction and biodiversity loss.",
+                                    "placeholder": "Start typing here"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "z1a2b3c4-d5e6f7g8h9i10",
+                            "name": "Column",
+                            "type": "column",
+                            "content": [
+                                {
+                                    "id": "j1k2l3m4-n5o6p7q8r9s10",
+                                    "name": "Heading",
+                                    "type": "heading3",
+                                    "content": "Climate Effects",
+                                    "placeholder": "Heading 3"
+                                },
+                                {
+                                    "id": "t1u2v3w4-x5y6z7a8b9c10",
+                                    "name": "Paragraph",
+                                    "type": "paragraph",
+                                    "content": "Greenhouse gas emissions are contributing to global warming, causing extreme weather patterns and rising sea levels.",
+                                    "placeholder": "Start typing here"
+                                }
+                            ]
+                        }
+                    ],
+                    "className": "border rounded-lg shadow-lg"
+                }
+            ]
+        },
+        "className": "p-4 mx-auto flex justify-center items-center bg-yellow-50",
+        "slideName": "Impact of Human Activities"
+    },
+    {
+        "id": "4c6e8g1h-2i3j-4k5l6m7n8o9p10",
+        "type": "threeColumns",
+        "content": {
+            "id": "q1r2s3t4-u5v6w7x8y9z10",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "a1b2c3d4-e5f6g7h8i9j10",
+                    "name": "Title",
+                    "type": "title",
+                    "content": "Why Conserve Nature?",
+                    "placeholder": "Untitled Card"
+                },
+                {
+                    "id": "k1l2m3n4-o5p6q7r8s9t10",
+                    "name": "Text and image",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "u1v2w3x4-y5z6a7b8c9d10",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "Conservation supports biodiversity, ensures clean air and water, and helps mitigate climate change impacts.",
+                            "placeholder": "Start typing here"
+                        },
+                        {
+                            "id": "z1a2b3c4-d5e6f7g8h9i10",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "Protecting wildlife habitats preserves ecosystems and promotes sustainable development.",
+                            "placeholder": "Start typing here"
+                        },
+                        {
+                            "id": "j1k2l3m4-n5o6p7q8r9s10",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "Healthy ecosystems improve quality of life and provide economic benefits through tourism and resources.",
+                            "placeholder": "Start typing here"
+                        }
+                    ],
+                    "className": "border rounded-lg shadow-lg"
+                }
+            ]
+        },
+        "className": "p-4 mx-auto flex justify-center items-center bg-blue-50",
+        "slideName": "Benefits of Conservation"
+    },
+    {
+        "id": "5d7f9h2i-3j4k-5l6m7n8o9p10",
+        "type": "twoColumns",
+        "content": {
+            "id": "q1r2s3t4-u5v6w7x8y9z10",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "a1b2c3d4-e5f6g7h8i9j10",
+                    "name": "Title",
+                    "type": "title",
+                    "content": "How to Help Nature",
+                    "placeholder": "Untitled Card"
+                },
+                {
+                    "id": "k1l2m3n4-o5p6q7r8s9t10",
+                    "name": "Text and image",
+                    "type": "resizable-column",
+                    "content": [
+                        {
+                            "id": "u1v2w3x4-y5z6a7b8c9d10",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "Reduce waste by recycling, composting, and minimizing plastic usage.",
+                            "placeholder": "Start typing here"
+                        },
+                        {
+                            "id": "z1a2b3c4-d5e6f7g8h9i10",
+                            "name": "Paragraph",
+                            "type": "paragraph",
+                            "content": "Participate in community clean-ups and tree-planting initiatives.",
+                            "placeholder": "Start typing here"
+                        }
+                    ],
+                    "className": "border rounded-lg shadow-lg"
+                }
+            ]
+        },
+        "className": "p-4 mx-auto flex justify-center items-center bg-teal-50",
+        "slideName": "Actions to Save Nature"
+    },
+    {
+        "id": "6e8g1i3j-4k5l-6m7n8o9p10",
+        "type": "blank-card",
+        "content": {
+            "id": "a1b2c3d4-e5f6g7h8i9j10",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "k1l2m3n4-o5p6q7r8s9t10",
+                    "name": "Call to Action Title",
+                    "type": "title",
+                    "content": "Join Us in Protecting Nature",
+                    "placeholder": "Untitled Card"
+                }
+            ]
+        },
+        "className": "p-8 mx-auto flex justify-center items-center bg-orange-50",
+        "slideName": "Call to Action"
+    }
+]
