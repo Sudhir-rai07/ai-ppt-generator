@@ -13,41 +13,39 @@ const Paragraph = React.forwardRef<HTMLTextAreaElement, ParagraphProps>(({ class
     useEffect(() => {
         const textarea = textareaRef.current
         if (textarea && !isPreview) {
-            const adjuctHeight = () => {
+            const adjustHeight = () => {
                 textarea.style.height = '0';
                 textarea.style.height = `${textarea.scrollHeight}px`
             }
-            textarea.addEventListener("input", adjuctHeight)
-            adjuctHeight()
-            return () => textarea.removeEventListener("input", adjuctHeight)
+            textarea.addEventListener("input", adjustHeight)
+            adjustHeight()
+            return () => textarea.removeEventListener("input", adjustHeight)
         }
     }, [isPreview])
 
     return <textarea className={cn("w-full bg-transparent font-normal text-gray-900 placeholder:text-gray-300 focus:outline-none resize-none overflow-hidden leading-tight",
-        `${isPreview ? 'text-[0.5rem' : 'text-lg'}`,
+        `${isPreview ? 'text-[0.5rem]' : 'text-lg'}`,
         className
     )}
-    style={{
-        padding: 0,
-        margin: 0,
-        color: 'inherit',
-        boxSizing:"content-box",
-        lineHeight: '1.5rem',
-        minHeight: '1.5rem',
-        ...styles 
-    }}
+        style={{
+            padding: 0,
+            margin: 0,
+            color: 'inherit',
+            boxSizing: "content-box",
+            lineHeight: '1.5rem',
+            minHeight: '1.5rem',
+            ...styles
+        }}
+        ref={(el) => {
+            (textareaRef.current as HTMLTextAreaElement | null) = el
 
-    ref = {(el)=>{
-        (textareaRef.current as HTMLTextAreaElement | null) = el
-
-        if(typeof ref === 'function') ref(el)
-        else if(ref) ref.current = el
-    }}
-
-    readOnly={isPreview }
+            if (typeof ref === 'function') { ref(el) }
+            else if (ref) { ref.current = el }
+        }}
+        {...props}
+        readOnly={isPreview}
     >
-
     </textarea>
 })
-
+Paragraph.displayName = "Paragraph";
 export default Paragraph

@@ -22,20 +22,20 @@ const createHeading = (displayName: string, defaultClassName: string) => {
           }
           textarea.addEventListener("input", adjustHeight)
           adjustHeight()
-          return textarea.removeEventListener("input", adjustHeight)
+          return ()=> textarea.removeEventListener("input", adjustHeight)
         }
       }, [isPreview])
 
       const previewClassName = isPreview ? "text-xs" : ''
 
-      return <textarea className={cn(`w-full bg-transparent ${defaultClassName} ${previewClassName} font-normal text-gray-900 placeholder:text-gray-300 focus:outline-none resize-none overflow-hidden leading-tight`, className)}
+      return <textarea className={cn(`w-full bg-transparent ${defaultClassName} ${previewClassName} font-normal text-gray-900 placeholder:text-gray-300 focus:outline-none resize-none overflow-hidden`, className)}
         style={{
           padding: 0,
           margin: 0,
           color: 'inherit',
           boxSizing: 'content-box',
-          lineHeight: '1.2rem',
-          minHeight: '1.2rem',
+          lineHeight: '1.2em',
+          minHeight: '1.2em',
           ...styles
         }}
 
@@ -46,7 +46,6 @@ const createHeading = (displayName: string, defaultClassName: string) => {
         }}
 
         readOnly={isPreview}
-        value={props.value}
         {...props}
       >
       </textarea>

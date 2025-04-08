@@ -6,7 +6,7 @@ type Props = {
     src: string
     alt: string
     className?:string
-    isPreview?: boolean
+    isPreview: boolean
     contentId: string
     onContentChange: (
         contentId: string,
@@ -29,19 +29,19 @@ const CustomComponent = ({
   return (
     <div className={`relative group w-full h-full rounded-lg`}>
       <Image 
-       src={src}
+       src={"https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=2101&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
        width={isPreview ? 48:800}
        height={isPreview ? 48:800}
        alt={alt}
        className={`object-cover w-full h-full rounded-lg ${className}`}
       />
-      {/* {!isPreview && isEditable && 
+      {!isPreview && isEditable && 
       <div className='absolute top-0 left-0 hidden group-hover:block'>
         <UploadImage 
           contentId={contentId}
           onContentChange={onContentChange}
         />
-        </div>} */}
+        </div>}
     </div>
   )
 }

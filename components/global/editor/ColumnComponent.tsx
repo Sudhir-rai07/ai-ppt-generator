@@ -46,7 +46,7 @@ const ColumnComponent = (
          } else {
             setColumns(content)
          }
-    }, [])
+    }, [content])
 
   return (
     <div className='relative h-full w-full'>
@@ -54,7 +54,7 @@ const ColumnComponent = (
             direction='horizontal'
             className={cn(
                 'h-full w-full flex',
-                !isEditable && 'border-0',
+                !isEditable && '!border-0',
                 className
             )}
         >
@@ -62,7 +62,7 @@ const ColumnComponent = (
                 <React.Fragment key={index}>
                     <ResizablePanel
                     minSize={20}
-                    maxSize={100 / columns.length}
+                    defaultSize={100 / columns.length}
                     >
                         <div className={cn('h-full w-full', item.className)}>
                             <MasterRecursiveComponent
@@ -75,7 +75,7 @@ const ColumnComponent = (
                             />
                         </div>
                     </ResizablePanel>
-                    {index<columns.length -1  && isEditable && (
+                    {index < columns.length -1  && isEditable && (
                         <ResizableHandle withHandle={!isPreview}/>
                     )}
                 </React.Fragment>

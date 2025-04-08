@@ -45,7 +45,7 @@ const ContentRenderer: React.FC<Props> = React.memo(
         const animationProps = {
             initial: { opacity: 0, y: 20 },
             animate: { opacity: 1, y: 0 },
-            transition: { duration: 0.5 }
+            transition: { duration: 2 }
         }
 
         // WIP: Complete types
@@ -54,31 +54,31 @@ const ContentRenderer: React.FC<Props> = React.memo(
                 return <motion.div
                     className='w-full h-full '
                     {...animationProps}>
-                    <Heading1 {...commonProps} />
+                    <Heading1 {...commonProps} ></Heading1>
                 </motion.div>
             case "heading2":
                 return <motion.div
                     className='w-full h-full '
                     {...animationProps}>
-                    <Heading2 {...commonProps} />
+                    <Heading2 {...commonProps} ></Heading2>
                 </motion.div>
             case "heading3":
                 return <motion.div
                     className='w-full h-full '
                     {...animationProps}>
-                    <Heading3 {...commonProps} />
+                    <Heading3 {...commonProps} ></Heading3>
                 </motion.div>
             case "heading4":
                 return <motion.div
                     className='w-full h-full '
                     {...animationProps}>
-                    <Heading4 {...commonProps} />
+                    <Heading4 {...commonProps} ></Heading4>
                 </motion.div>
             case "title":
                 return <motion.div
                     className='w-full h-full '
                     {...animationProps}>
-                    <Title {...commonProps} />
+                    <Title {...commonProps} ></Title>
                 </motion.div>
             case "paragraph":
                 return <motion.div
@@ -86,7 +86,7 @@ const ContentRenderer: React.FC<Props> = React.memo(
                     {...animationProps}>
                     <Paragraph {...commonProps} />
                 </motion.div>
-            case 'resixable-column':
+            case 'resizable-column':
                 if (Array.isArray(content.content)) {
                     return (
                         <motion.div
@@ -111,7 +111,7 @@ const ContentRenderer: React.FC<Props> = React.memo(
                         className='w-full h-full '
                         {...animationProps}>
                         <CustomComponent
-                            src={content.content as string}
+                            src={content.content as string || "https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=2101&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                             alt={content.alt || 'image'}
                             className={content.className}
                             isPreview={isPreview}
@@ -298,7 +298,8 @@ const ContentRenderer: React.FC<Props> = React.memo(
                     </motion.div>
                 )
             default:
-                return <div>Hell bitch this is not working</div>
+                console.log(`Unknown content type: ${content.type}`, content);
+                return <div>Unknown content type: {content.type}</div>
         }
     }
 )

@@ -23,7 +23,7 @@ interface DropZoneProps {
             type: string;
             layoutType: string;
             component: LayoutSlides;
-            index?: number;
+            index: number;
         },
         dropIndex: number
     ) => void
@@ -39,7 +39,7 @@ export const DropZone: React.FunctionComponent<DropZoneProps> = ({
             type: string;
             layoutType: string;
             component: LayoutSlides;
-            index?: number;
+            index: number;
         }) => {
             onDrop(item, index)
         },
@@ -60,8 +60,8 @@ export const DropZone: React.FunctionComponent<DropZoneProps> = ({
         )}>
 
             {isOver && canDrop && (
-                <div className='h-full flex items-center justify-center text-green-600'>
-                    Drop here
+                <div ref={dropRef as unknown as React.RefObject<HTMLDivElement>} className='h-full flex items-center justify-center text-green-600'>
+                    Drop Here
                 </div>
             )}
 
@@ -99,7 +99,7 @@ export const DraggableSlide: React.FC<DraggableSlideProps> = ({
         canDrag: isEditable
     })
 
-    const [_, drop] = useDrop({
+    const [, drop] = useDrop({
         accept: ["SLIDE", "LAYOUT"],
         hover(item: { index: number, type: string }) {
             if (!ref.current || !isEditable) {
@@ -121,13 +121,17 @@ export const DraggableSlide: React.FC<DraggableSlideProps> = ({
 
     drag(drop(ref))
 
-    const handleContentChange = (contentId: string, newContent: string | string[] | string[][]) => {
+    const handleContentChange = (
+        contentId: string, 
+        newContent: string | string[] | string[][]
+    ) => {
         if (isEditable) {
             updateContentItem(slide.id, contentId, newContent)
         }
     }
     return (
-        <div ref={ref} className={cn('w-full rounded-lg shadow-lg relative p-0  min-h-[400px] max-h-[800px]', ' shadow-lg transition-shadow duration-300', 'flex flex-col',
+        <div ref={ref} className={cn(
+            'w-full rounded-lg shadow-lg relative p-0  min-h-[400px] max-h-[800px]', 'shadow-lg transition-shadow duration-300', 'flex flex-col',
             index === currentSlide ? 'ring-2 ring-blue-500 ring-offset-2' : '',
             slide.className,
             isDragging ? "opacity-50" : "opacity-100"
@@ -144,6 +148,7 @@ export const DraggableSlide: React.FC<DraggableSlideProps> = ({
                     slideId={slide.id}
                     isEditable={isEditable}
                     onContentChange={handleContentChange}
+                    index={index}
                 />
             </div>
 
@@ -187,10 +192,10 @@ const Editor = ({ isEditable }: Props) => {
 
     const {
         getOrderedSlides,
-        currentSlide,
         removeSlide,
         addSlideAtIndex,
         reorderSlides,
+        currentSlide,
         slides,
         project
     } = useSlideStore()
@@ -302,6 +307,13 @@ const Editor = ({ isEditable }: Props) => {
                                         handleDelete={handleDelete}
                                         isEditable={isEditable}
                                     />
+
+                                    {isEditable &&
+                                        <DropZone
+                                            index={index + 1}
+                                            onDrop={handleDrop}
+                                            isEditable={isEditable}
+                                        />}
                                 </React.Fragment>
                             ))}
                         </div>

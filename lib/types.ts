@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface Slide {
     id: string;
     slideName: string;
@@ -9,7 +11,7 @@ export interface Slide {
 
 export type ContentType = 
     | 'column'
-    | 'resixable-column'
+    | 'resizable-column'
     | 'text'
     | 'paragraph'
     | 'image'
@@ -82,4 +84,30 @@ export interface LayoutSlides  {
     content: ContentItem;
     className?: string;
     type: string
+}
+
+export interface Layout {
+    name: string
+    icon: React.FC
+    type: string
+    component: LayoutSlides
+    layoutType: string
+}
+
+export interface LayoutGroup {
+    name: string
+    layouts: Layout[]
+}
+
+export interface Component {
+    name: string
+    icon: string
+    type: string
+    component: ContentItem
+    componentType: string
+}
+
+export interface ComponentGroup {
+    name: string
+    components: Component[]
 }

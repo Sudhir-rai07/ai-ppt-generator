@@ -1,64 +1,67 @@
 [
     {
+        "id": "1a2b3c4d-5e6f-7g8h-9i10j11k12l13m",
         "type": "blank-card",
         "content": {
-            "id": "c3ab4d08-ef12-4a2c-a0a3-9f30e5b4c8e8",
+            "id": "n1o2p3q4r5s6t7u8v9w10x11y12z13a",
             "name": "Column",
             "type": "column",
             "content": [
                 {
-                    "id": "f1e96e8b-d3e8-4f29-9e2d-8c3a1ba0de2e",
+                    "id": "b1c2d3e4f5g6h7i8j9k10l11m12n13o",
                     "name": "Title",
                     "type": "title",
-                    "content": "",
+                    "content": "United card",
                     "placeholder": "Untitled Card"
                 }
             ]
         },
         "className": "p-8 mx-auto flex justify-center items-center min-h-[200px]",
-        "slideName": "Blank card"
+        "slideName": "Blank card",
+        "slideOrder": 0
     },
     {
+        "id": "2b3c4d5e-6f7g8h9i-10j11k12l13m14n",
         "type": "accentLeft",
         "content": {
-            "id": "a4d3d3a1-7d12-4c89-a243-3e2e5dcbbd89",
+            "id": "o1p2q3r4s5t6u7v8w9x10y11z12a13b",
             "name": "Column",
             "type": "column",
             "content": [
                 {
-                    "id": "b8f6a9f1-4b74-4d7e-93f8-fc7a8b1d2f84",
+                    "id": "c1d2e3f4g5h6i7j8k9l10m11n12o13p",
                     "name": "Resizable column",
                     "type": "resizable-column",
                     "content": [
                         {
-                            "id": "1b7e5f5e-b7f4-4d9e-806c-6c1e4ae3b3a9",
-                            "alt": "A professional handshake symbolizing trust and respect",
+                            "id": "d1e2f3g4h5i6j7k8l9m10n11o12p13q",
+                            "alt": "A modern cloud computing concept with futuristic visuals",
                             "name": "Image",
                             "type": "image",
-                            "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-kBZmR849LPP8rayy5G1ENNxj/user-2i9ZxLqdEHtCnsln6t1TPU8t/img-jzGTxBVSkfEOmWGYf8S2PlFj.png?st=2025-04-05T04%3A17%3A23Z&se=2025-04-05T06%3A17%3A23Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-05T05%3A17%3A23Z&ske=2025-04-06T05%3A17%3A23Z&sks=b&skv=2024-08-04&sig=lSRUCJLG4HsykGMHyspjvDzMXZYxaLVNOBAuAgbIwso%3D"
+                            "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-kBZmR849LPP8rayy5G1ENNxj/user-2i9ZxLqdEHtCnsln6t1TPU8t/img-GP92thNXzQTOd7cTL3uiwRuM.png?st=2025-04-06T03%3A26%3A50Z&se=2025-04-06T05%3A26%3A50Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-05T18%3A11%3A25Z&ske=2025-04-06T18%3A11%3A25Z&sks=b&skv=2024-08-04&sig=9xLt3g/ddVmhNJS0s27xz2bWxtDvVmqmo3AjVDAVjgM%3D"
                         },
                         {
-                            "id": "c4d2e8d1-9f0b-4a57-8788-7b6e9a3c2f3b",
+                            "id": "e1f2g3h4i5j6k7l8m9n10o11p12q13r",
                             "name": "Column",
                             "type": "column",
                             "content": [
                                 {
-                                    "id": "e1f0a8d1-b8c4-4f2e-9c68-4b5e9e2c7b1a",
+                                    "id": "f1g2h3i4j5k6l7m8n9o10p11q12r13s",
                                     "name": "Heading1",
                                     "type": "heading1",
-                                    "content": "",
-                                    "placeholder": "Develop strong personal values"
+                                    "content": "Understanding the Core Problem",
+                                    "placeholder": "Heading1"
                                 },
                                 {
-                                    "id": "a7c9d1e2-5f0b-4a2f-9c68-7b1e9c3d6f4a",
+                                    "id": "g1h2i3j4k5l6m7n8o9p10q11r12s13t",
                                     "name": "Paragraph",
                                     "type": "paragraph",
-                                    "content": "",
-                                    "placeholder": "Building trust and respect starts with integrity and personal values."
+                                    "content": "Identifying the core problem your SaaS product solves is the foundation for success.",
+                                    "placeholder": "Start typing here"
                                 }
                             ],
                             "className": "w-full h-full p-8 flex justify-center items-center",
-                            "placeholder": "Values and Trust"
+                            "placeholder": "Heading1"
                         }
                     ],
                     "restrictToDrop": true
@@ -67,135 +70,161 @@
             "restrictDropTo": true
         },
         "className": "min-h-[300px]",
-        "slideName": "Accent left"
+        "slideName": "Accent left",
+        "slideOrder": 1
     },
     {
-        "type": "twoColumnsWithHeadings",
+        "id": "3c4d5e6f-7g8h9i10j-11k12l13m14n15o",
+        "type": "twoColumns",
         "content": {
-            "id": "f3d2e1c8-7f9b-4a4e-8c2f-4d1e9c7b6f8a",
+            "id": "h1i2j3k4l5m6n7o8p9q10r11s12t13u",
             "name": "Column",
             "type": "column",
             "content": [
                 {
-                    "id": "c1d7e9f3-2b4f-4a2e-8c9b-7f6e1d2c4a3b",
-                    "name": "Resizable column",
+                    "id": "i1j2k3l4m5n6o7p8q9r10s11t12u13v",
+                    "name": "Left Column",
                     "type": "resizable-column",
                     "content": [
                         {
-                            "id": "e2f8d1c4-5b9f-4a7e-8c2b-7f3e1d9c4a5b",
+                            "id": "j1k2l3m4n5o6p7q8r9s10t11u12v13w",
                             "name": "Heading2",
                             "type": "heading2",
-                            "content": "",
-                            "placeholder": "Pursue Education"
+                            "content": "Modern Frameworks",
+                            "placeholder": "Heading2"
                         },
                         {
-                            "id": "b3c7d2e1-9f4a-4a2f-8c9b-6f7e1d2c4a5b",
+                            "id": "k1l2m3n4o5p6q7r8s9t10u11v12w13x",
                             "name": "Paragraph",
                             "type": "paragraph",
-                            "content": "",
-                            "placeholder": "Continuous self-improvement builds your knowledge and skills."
+                            "content": "Leverage modern development frameworks to streamline application architecture and reduce complexity.",
+                            "placeholder": "Start typing here"
                         }
                     ]
                 },
                 {
-                    "id": "a9c7d1e5-4b2f-4a7e-8c9b-6f3e1d9c2a5b",
-                    "name": "Resizable column",
+                    "id": "l1m2n3o4p5q6r7s8t9u10v11w12x13y",
+                    "name": "Right Column",
                     "type": "resizable-column",
                     "content": [
                         {
-                            "id": "e8f1d2c7-9b4a-4a2e-8c9b-7f6e1d2c4a3b",
-                            "name": "Heading2",
-                            "type": "heading2",
-                            "content": "",
-                            "placeholder": "Expand Your Skills"
-                        },
-                        {
-                            "id": "b4c7d2e1-9f5a-4b2e-9c7b-6f3e1d2c7a5b",
-                            "name": "Paragraph",
-                            "type": "paragraph",
-                            "content": "",
-                            "placeholder": "Seek opportunities for growth through education and training."
+                            "id": "m1n2o3p4q5r6s7t8u9v10w11x12y13z",
+                            "alt": "A developer working with a modern coding framework on a laptop",
+                            "name": "Image",
+                            "type": "image",
+                            "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-kBZmR849LPP8rayy5G1ENNxj/user-2i9ZxLqdEHtCnsln6t1TPU8t/img-V5As1FwYWGeWAlMojMRSKs9e.png?st=2025-04-06T03%3A26%3A50Z&se=2025-04-06T05%3A26%3A50Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-05T12%3A53%3A03Z&ske=2025-04-06T12%3A53%3A03Z&sks=b&skv=2024-08-04&sig=ax2LzKwENbHT%2BQ1LAFz20cECj2l1j162us13ymSWW5E%3D"
                         }
                     ]
                 }
             ]
         },
-        "className": "min-h-[400px]",
-        "slideName": "Two columns with headings"
+        "className": "min-h-[300px]",
+        "slideName": "Two columns",
+        "slideOrder": 2
     },
     {
-        "type": "threeColumns",
+        "id": "4d5e6f7g-8h9i10j11k-12l13m14n15o16p",
+        "type": "imageAndText",
         "content": {
-            "id": "c8d2f1e7-9f4b-4a7e-9c2b-6f3e1d9c4a7b",
+            "id": "n1o2p3q4r5s6t7u8v9w10x11y12z13a",
             "name": "Column",
             "type": "column",
             "content": [
                 {
-                    "id": "e7c1d2f9-5b4a-4a2f-9c7b-6f3e1d2c7a5b",
-                    "name": "Column",
+                    "id": "o1p2q3r4s5t6u7v8w9x10y11z12a13b",
+                    "alt": "A team collaborating in an agile work environment with sticky notes and planning boards",
+                    "name": "Image",
+                    "type": "image",
+                    "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-kBZmR849LPP8rayy5G1ENNxj/user-2i9ZxLqdEHtCnsln6t1TPU8t/img-xMYeMZXMPmuMBkIxs9vT6qXt.png?st=2025-04-06T03%3A26%3A50Z&se=2025-04-06T05%3A26%3A50Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-05T12%3A36%3A01Z&ske=2025-04-06T12%3A36%3A01Z&sks=b&skv=2024-08-04&sig=7QZMee2yT1qOE3NMIAesBXXB4xNAN%2BXhOgOVY6SRlhg%3D"
+                },
+                {
+                    "id": "p1q2r3s4t5u6v7w8x9y10z11a12b13c",
+                    "name": "Paragraph",
+                    "type": "paragraph",
+                    "content": "Adopting agile methodologies allows for rapid iteration and continuous improvement in product development.",
+                    "placeholder": "Start typing here"
+                }
+            ]
+        },
+        "className": "min-h-[300px]",
+        "slideName": "Image and text",
+        "slideOrder": 3
+    },
+    {
+        "id": "5e6f7g8h-9i10j11k12l-13m14n15o16p17q",
+        "type": "threeColumnsWithHeadings",
+        "content": {
+            "id": "q1r2s3t4u5v6w7x8y9z10a11b12c13d",
+            "name": "Column",
+            "type": "column",
+            "content": [
+                {
+                    "id": "r1s2t3u4v5w6x7y8z9a10b11c12d13e",
+                    "name": "Column 1",
                     "type": "column",
                     "content": [
                         {
-                            "id": "b1e7c2d9-4a5f-4a2e-9c7b-6f3e1d2c8a5b",
+                            "id": "s1t2u3v4w5x6y7z8a9b10c11d12e13f",
                             "name": "Heading3",
                             "type": "heading3",
-                            "content": "",
-                            "placeholder": "Build Networks"
+                            "content": "No-Code Tools",
+                            "placeholder": "Heading3"
                         },
                         {
-                            "id": "e9d7c1f4-5a2b-4a7e-8c9b-7f3e1d2c4a5b",
+                            "id": "t1u2v3w4x5y6z7a8b9c10d11e12f13g",
                             "name": "Paragraph",
                             "type": "paragraph",
-                            "content": "",
-                            "placeholder": "Engage with your community to create meaningful relationships."
+                            "content": "Empower teams to create and iterate faster with no-code and low-code tools.",
+                            "placeholder": "Start typing here"
                         }
                     ]
                 },
                 {
-                    "id": "f7d1e9c4-5b2f-4a7e-9c7b-6f3e1d2c7a5b",
-                    "name": "Column",
+                    "id": "u1v2w3x4y5z6a7b8c9d10e11f12g13h",
+                    "name": "Column 2",
                     "type": "column",
                     "content": [
                         {
-                            "id": "b5e7c2d9-4a2f-4a7e-9c7b-6f3e1d2c9a5b",
+                            "id": "v1w2x3y4z5a6b7c8d9e10f11g12h13i",
                             "name": "Heading3",
                             "type": "heading3",
-                            "content": "",
-                            "placeholder": "Volunteer"
+                            "content": "Third-Party APIs",
+                            "placeholder": "Heading3"
                         },
                         {
-                            "id": "e9c7d2f1-5b9a-4a7e-8c9b-7f3e1d2c4a7b",
+                            "id": "w1x2y3z4a5b6c7d8e9f10g11h12i13j",
                             "name": "Paragraph",
                             "type": "paragraph",
-                            "content": "",
-                            "placeholder": "Contribute positively by helping others and being socially responsible."
+                            "content": "Integrating reliable third-party APIs saves time and reduces the need for custom development.",
+                            "placeholder": "Start typing here"
                         }
                     ]
                 },
                 {
-                    "id": "a9c7e1d2-4b5f-4a7e-9c7b-6f3e1d2c7a5b",
-                    "name": "Column",
+                    "id": "x1y2z3a4b5c6d7e8f9g10h11i12j13k",
+                    "name": "Column 3",
                     "type": "column",
                     "content": [
                         {
-                            "id": "f9e7c2d1-5b4a-4a2e-9c7b-6f3e1d2c8a5b",
+                            "id": "y1z2a3b4c5d6e7f8g9h10i11j12k13l",
                             "name": "Heading3",
                             "type": "heading3",
-                            "content": "",
-                            "placeholder": "Professionalism"
+                            "content": "User back",
+                            "placeholder": "Heading3"
                         },
                         {
-                            "id": "b7d9c2e1-4a5f-4a7e-9c7b-6f3e1d2c8a5b",
+                            "id": "z1a2b3c4d5e6f7g8h9i10j11k12l13m",
                             "name": "Paragraph",
                             "type": "paragraph",
-                            "content": "",
-                            "placeholder": "Always maintain a professional and respectful demeanor."
+                            "content": "Focusing on user feedback ensures alignment with market needs and long-term success.",
+                            "placeholder": "Start typing here"
                         }
                     ]
                 }
             ]
         },
-        "className": "min-h-[400px]",
-        "slideName": "Three columns"
+        "className": "min-h-[300px]",
+        "slideName": "Three columns with headings",
+        "slideOrder": 4
     }
 ]
