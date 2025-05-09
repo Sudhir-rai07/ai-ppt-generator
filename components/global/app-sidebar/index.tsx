@@ -34,7 +34,7 @@ const AppSidebar = ({
             </Avatar>
           </div>
 
-          <span className='truncate text-primary text-3xl font-semibold'>
+          <span className='truncate uppercase text-primary text-3xl font-semibold'>
             Ssd
           </span>
         </SidebarMenuButton>

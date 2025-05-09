@@ -40,7 +40,7 @@ const Themecard = ({
             },
         },
         right: {
-            hidden: { opacity: 0, x: '-50%', y: '-50%', scale: 0.9, rotate: 0 },
+            hidden: { opacity: 0, x: '50%', y: '50%', scale: 0.9, rotate: 0 },
             visible: {
                 opacity: 1,
                 x: '25%',
