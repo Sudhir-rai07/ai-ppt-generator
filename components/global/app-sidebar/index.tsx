@@ -30,12 +30,14 @@ const AppSidebar = ({
           <div className='flex aspect-square size-8 items-center justify-center rounded-lg text-sidebar-primary-foreground'>
             <Avatar className='h-10 w-10 rounded-full'>
               <AvatarImage src='/ssd.png' alt='ssd-logo' />
-              <AvatarFallback className='rounded-lg'>SSD</AvatarFallback>
+              <AvatarFallback className='rounded-lg flex text-3xl font-semibold flex-col' >
+                <span>P</span>
+              </AvatarFallback>
             </Avatar>
           </div>
 
           <span className='truncate text-primary text-3xl font-semibold'>
-            Ssd
+            resentAI
           </span>
         </SidebarMenuButton>
       </SidebarHeader>

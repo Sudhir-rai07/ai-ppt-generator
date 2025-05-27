@@ -16,8 +16,6 @@ type Props = {
 const LayoutPreviewItem = ({
   Icon,
   name,
-  type,
-  component,
   isSelected,
   onClick
 }: Props) => {

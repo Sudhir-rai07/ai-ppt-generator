@@ -1,10 +1,10 @@
 import { useSlideStore } from '@/store/useSlideStore'
 import { AnimatePresence } from 'framer-motion'
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MasterRecursiveComponent } from '../editor/MasterRecursiveComponent'
 import { Button } from '@/components/ui/button'
-import { ChevronLeft, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 type Props = {
     onClose: () => void
@@ -17,6 +17,37 @@ const PresentationMode = ({ onClose }: Props) => {
     const goToPreviousSlide = () => {
         setCurrentSlideIndex((prev) => Math.max(prev - 1, 0))
     }
+
+    // const isLastSlide = currentSlideIndex - slides.length - 1
+
+    const goToNextSlide = () => {
+        if (currentSlideIndex === slides.length - 1) {
+            onClose()
+        } else {
+            setCurrentSlideIndex(prev => Math.min(prev + 1, slides.length - 1))
+        }
+    }
+
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "ArrowRight" || e.key === ' ') {
+                if (currentSlideIndex === slides.length - 1) {
+                    onClose()
+                } else {
+                    setCurrentSlideIndex(prev => Math.min(prev + 1, slides.length - 1))
+                }
+            } else if (e.key === "ArrowLeft") {
+                setCurrentSlideIndex(prev => Math.max(prev - 1, 0))
+            } else if (e.key === 'Escape') {
+                onClose()
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [slides.length, onClose, currentSlideIndex])
     return (
         <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
             <div className='relative w-full h-full' style={{
@@ -59,10 +90,22 @@ const PresentationMode = ({ onClose }: Props) => {
 
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 ">
                     <Button size={'icon'}
+                        variant={'outline'}
                         onClick={goToPreviousSlide}
                         disabled={currentSlideIndex === 0}
                     >
                         <ChevronLeft className="h-4 w-4" />
+                    </Button>
+
+                    <Button
+                        variant={'outline'}
+                        size={'icon'}
+                        onClick={goToNextSlide}
+                        disabled={currentSlideIndex === slides.length - 1}
+                    >
+                            <ChevronRight className="h-4 w-4" />
+
+
                     </Button>
                 </div>
             </div>

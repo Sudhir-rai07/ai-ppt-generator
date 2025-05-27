@@ -35,10 +35,10 @@ const RecentOpen = ({ recentProjects }: Props) => {
         recentProjects.length > 0 ?
         <SidebarGroup>
             <SidebarGroupLabel>Recent Open</SidebarGroupLabel>
-            <SidebarMenu key={1}>
+            <SidebarMenu>
                 {recentProjects.length > 0 ?
                     (
-                        recentProjects.map((project, idx) => (
+                        recentProjects.map((project) => (
                             <>
                                 <SidebarMenuItem key={project.id}>
                                     <SidebarMenuButton asChild tooltip={project.title} className='hover:bg-muted'>

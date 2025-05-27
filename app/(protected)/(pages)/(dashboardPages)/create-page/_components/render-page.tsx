@@ -13,7 +13,7 @@ const RenderPage = () => {
 
   useEffect(() => {
     setPage("create")
-  }, [])
+  }, [setPage])
 
   const handleBack = () => {
     setPage("create")

@@ -20,9 +20,7 @@ type ListItemProps = {
 
 
 const ListItem: React.FC<ListItemProps> = ({
-    fontColor,
     index,
-    isEditable,
     item,
     onChange,
     onKeyDown,

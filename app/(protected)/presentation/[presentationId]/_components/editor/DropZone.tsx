@@ -1,3 +1,5 @@
+'use client'
+
 import { ContentItem } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { useSlideStore } from '@/store/useSlideStore'
@@ -33,8 +35,8 @@ const DropZone = ({
             }
         },
         collect: (monitor) => ({
-            isOver: !!monitor.isOver,
-            canDrop: !!monitor.canDrop
+            isOver: !!monitor.isOver(),
+            canDrop: !!monitor.canDrop()
         })
     })
     return (
@@ -45,7 +47,13 @@ const DropZone = ({
             'hover:border-blue-300'
         )}
         >
+            {isOver && canDrop && (
+                <div className="w-full h-full flex text-sm items-center justify-center text-green-600">
+                    Drop Here
+                </div>
+            )}
         </div>
+
     )
 }
 

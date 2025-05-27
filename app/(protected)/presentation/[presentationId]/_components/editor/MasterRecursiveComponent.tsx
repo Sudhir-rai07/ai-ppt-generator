@@ -29,7 +29,7 @@ type Props = {
 }
 
 const ContentRenderer: React.FC<Props> = React.memo(
-    ({ content, onContentChange, slideId, index, isPreview = false, isEditable = true }) => {
+    ({ content, onContentChange, slideId, isPreview = false, isEditable = true }) => {
 
         const handleChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
             onContentChange(content.id, e.target.value)
@@ -39,16 +39,16 @@ const ContentRenderer: React.FC<Props> = React.memo(
             placeholder: content.placeholder,
             value: content.content as string,
             onChange: handleChange,
-            isPreview: isPreview
+            isPreview: isPreview,
+            className: !isPreview ? "text-center ": ""
         }
 
         const animationProps = {
             initial: { opacity: 0, y: 20 },
             animate: { opacity: 1, y: 0 },
-            transition: { duration: 2 }
+            transition: { duration: 0.5 }
         }
 
-        // WIP: Complete types
         switch (content.type) {
             case "heading1":
                 return <motion.div
@@ -111,7 +111,7 @@ const ContentRenderer: React.FC<Props> = React.memo(
                         className='w-full h-full '
                         {...animationProps}>
                         <CustomComponent
-                            src={content.content as string || "https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=2101&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+                            src={content.content as string}
                             alt={content.alt || 'image'}
                             className={content.className}
                             isPreview={isPreview}
@@ -185,7 +185,7 @@ const ContentRenderer: React.FC<Props> = React.memo(
                                                 isEditable={isEditable}
                                             />
 
-                                            {isPreview && subItem.restrictToDrop && isEditable &&
+                                            {!isPreview && !subItem.restrictToDrop && isEditable &&
                                                 <DropZone
                                                     index={subIndex + 1}
                                                     parentId={content.id}

@@ -14,7 +14,7 @@ const CreatePage = ({ onSelectOption }: Props) => {
 
     useEffect(() => {
         setPage("create")
-    }, [])
+    }, [setPage])
     return (
         <motion.div
             initial="hidden"
