@@ -13,7 +13,6 @@ type Props = {
 }
 
 const ScalePreview = ({
-    index,
     isActive,
     slide
 }: Props) => {

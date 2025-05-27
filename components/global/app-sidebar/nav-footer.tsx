@@ -1,11 +1,12 @@
 "use client"
+import { buySubscription } from '@/actions/lemonSqueezy'
 import { Button } from '@/components/ui/button'
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
 import { SignedIn, UserButton, useUser } from '@clerk/nextjs'
 import { User } from '@prisma/client'
-import { Divide, Sidebar } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import { toast } from 'sonner'
 
 const NavFooter = ({ prismaUser }: { prismaUser: User }) => {
     const { isLoaded, isSignedIn, user } = useUser()
@@ -16,8 +17,23 @@ const NavFooter = ({ prismaUser }: { prismaUser: User }) => {
         return null
     }
 
-    const handleUpgrading = () => {
+    const handleUpgrading = async () => {
+        setLoading(true)
+        try {
+            const res = await buySubscription(prismaUser.id)
+            if(res.status !== 200){
+                throw new Error("Failed to upgrade subscription")
+            }
 
+            router.push(res.url)
+        } catch (error) {
+            console.error(error)
+            toast.error("Error", {
+                description: "Something went wrong. Please try later."
+            })
+        } finally {
+            setLoading(false)
+        }
     }
     return (
         <SidebarMenu>

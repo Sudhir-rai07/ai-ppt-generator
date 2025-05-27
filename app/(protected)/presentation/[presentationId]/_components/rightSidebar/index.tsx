@@ -74,7 +74,7 @@ const EditorSidebar = () => {
                                         <div className="grid grid-cols-3 gap-4">
                                           {group.components.map((item)=> (
                                               <ComponentCard 
-                                              key={index}
+                                              key={item.name}
                                               item={item}
                                               />
                                           ))}

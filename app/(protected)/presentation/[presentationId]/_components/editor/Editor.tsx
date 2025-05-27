@@ -53,19 +53,20 @@ export const DropZone: React.FunctionComponent<DropZoneProps> = ({
     if (!isEditable) return null
 
     return (
-        <div className={cn(
+         <div
+        ref={dropRef as unknown as React.RefObject<HTMLDivElement>}
+        className={cn(
             'h-4 my-2 rounded-md transition-all duration-200',
             isOver && canDrop ? 'border-green-500 bg-green-100' : 'border-gray-300',
             canDrop ? 'border-blue-300' : ''
-        )}>
-
-            {isOver && canDrop && (
-                <div ref={dropRef as unknown as React.RefObject<HTMLDivElement>} className='h-full flex items-center justify-center text-green-600'>
-                    Drop Here
-                </div>
-            )}
-
-        </div>
+        )}
+    >
+        {isOver && canDrop && (
+            <div className='h-full flex items-center justify-center text-green-600'>
+                Drop Here
+            </div>
+        )}
+    </div>
     )
 }
 
@@ -100,7 +101,7 @@ export const DraggableSlide: React.FC<DraggableSlideProps> = ({
     })
 
     const [, drop] = useDrop({
-        accept: ["SLIDE", "LAYOUT"],
+        accept: ["SLIDE", "layout"],
         hover(item: { index: number, type: string }) {
             if (!ref.current || !isEditable) {
                 return
@@ -279,7 +280,7 @@ const Editor = ({ isEditable }: Props) => {
                 clearTimeout(autoSaveTimerRef.current)
             }
         }
-    }, [slides, isEditable, project])
+    }, [slides, isEditable,saveSlides, project])
     return (
         <div className='flex-1 flex flex-col h-full max-w-3xl mx-auto px-4 mb-20'>
             {loading ?
@@ -299,7 +300,7 @@ const Editor = ({ isEditable }: Props) => {
                                 />}
 
                             {orderedSlides.map((slide: Slide, index: number) => (
-                                <React.Fragment key={slide.id || index}>
+                                <React.Fragment key={slide.id}>
                                     <DraggableSlide
                                         slide={slide}
                                         index={index}

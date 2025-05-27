@@ -47,7 +47,7 @@ const ThemeChooser = () => {
                 Themes
             </div>
             <div className="flex flex-col space-y-4">
-                {themes.map((theme, index) => (
+                {themes.map((theme) => (
                     <Button
                         key={theme.name}
                         onClick={() => handleThemeChange(theme)}

@@ -1,6 +1,5 @@
 'use client'
 
-import { Input } from '@/components/ui/input'
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable'
 import { useSlideStore } from '@/store/useSlideStore'
 import React, { useEffect, useState } from 'react'

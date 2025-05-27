@@ -14,14 +14,14 @@ import LayoutPreview from './_components/editor-sidebar/leftsidebar/LayoutPrevie
 import Editor from './_components/editor/Editor'
 import EditorSidebar from './_components/rightSidebar'
 
-const page = () => {
+const Page = () => {
 
   //WIP : Create the presentation view
 
   const params = useParams()
   const [isLoading, setIsLoading] = useState(true)
   const { setTheme } = useTheme()
-  const { setSlides, setProject, currentTheme, setCurrentThme } = useSlideStore()
+  const {  setProject, currentTheme, setCurrentThme } = useSlideStore()
 
   useEffect(() => {
     ; (async () => {
@@ -84,4 +84,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

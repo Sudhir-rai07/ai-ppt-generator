@@ -4,8 +4,6 @@ import { useSlideStore } from '@/store/useSlideStore'
 import React, { useEffect, useState } from 'react'
 import DraggableSlidePreview from './DraggableSlidePreview'
 
-type Props = {
-}
 
 const LayoutPreview = () => {
     const { getOrderedSlides, reorderSlides } = useSlideStore()
@@ -40,7 +38,7 @@ const LayoutPreview = () => {
 
                         {slides.map((slide, index) => (
                             <DraggableSlidePreview
-                                key={slide.id || index}
+                                key={slide.id}
                                 slide={slide}
                                 index={index}
                                 moveSlide={moveSlide}

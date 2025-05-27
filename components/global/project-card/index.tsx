@@ -11,6 +11,7 @@ import { toast } from "sonner"
 import AlertDialogBox from "../alert-dialog-box"
 import { Button } from "@/components/ui/button"
 import {motion} from 'framer-motion'
+import ThumbnailPreview from "./thumbnail-preview"
 
 
 
@@ -47,7 +48,6 @@ const ProjectCard = ({
             setLoading(false)
             toast.error("Error!", {
                 description: "Project Not found",
-                // style:{color:'white',backgroundColor:'red', borderColor:'red'}
                 style: { color: 'red' }
             })
             return
@@ -59,7 +59,6 @@ const ProjectCard = ({
             if (res.status !== 200) {
                 toast.error("Oopse!", {
                     description: res.error || "Something went wrong",
-                    // style:{color:'white',backgroundColor:'red', borderColor:'red'}
                     style: { color: 'red' }
                 })
                 return
@@ -75,7 +74,6 @@ const ProjectCard = ({
             console.log("ERROR handle recover project : ", error)
             toast.error("Oopse!", {
                 description: "Something went wront. Please contact support.",
-                // style:{color:'white',backgroundColor:'red', borderColor:'red'}
                 style: { color: 'red' }
             })
         }
@@ -88,7 +86,6 @@ const ProjectCard = ({
             setLoading(false)
             toast.error("Error!", {
                 description: "Project Not found",
-                // style:{color:'white',backgroundColor:'red', borderColor:'red'}
                 style: { color: 'red' }
             })
             return
@@ -100,7 +97,6 @@ const ProjectCard = ({
             if (res.status !== 200) {
                 toast.error("Oopse!", {
                     description: res.error || "Failed to delete project.",
-                    // style:{color:'white',backgroundColor:'red', borderColor:'red'}
                     style: { color: 'red' }
                 })
                 return
@@ -116,7 +112,6 @@ const ProjectCard = ({
             console.log("ERROR handle delete project : ", error)
             toast.error("Oopse!", {
                 description: "Something went wront. Please contact support.",
-                // style:{color:'white',backgroundColor:'red', borderColor:'red'}
                 style: { color: 'red' }
             })
         }
@@ -128,18 +123,17 @@ const ProjectCard = ({
         >
             <div className='relative aspect-[16/10] overflow-hidden rounded-lg cursor-pointer' onClick={handleNavigation}>
 
-                {/* //WIP: ADD THEME FROM DISCORD OF HIS IN CONSTANTS */}
-                {/* <ThumbnailPreview
+                
+                <ThumbnailPreview
                     theme={theme}
-                // WIP: Add the slide data
-                // slide={JSON.parse(JSON.stringify(slides))?.[0]} 
-                /> */}
+                    slide={JSON.parse(JSON.stringify(slides))?.[0]} 
+                />
             </div>
 
             <div className='w-full'>
                 <div className='space-y-1'>
                     <h3 className='font-semibold text-base text-primary line-clamp-1'>
-                        {title} Fake Title
+                        {title}
                     </h3>
 
                     <div className='flex w-full justify-between items-center gap-2'>

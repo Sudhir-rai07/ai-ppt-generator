@@ -16,11 +16,13 @@ export const data = {
             title: "Home",
             url: "/dashboard",
             icon: Home
-        }, {
-            title: "Templates",
-            url: "/templates",
-            icon: ChartLineIcon
-        }, {
+        },
+        //  {
+        //     title: "Templates",
+        //     url: "/templates",
+        //     icon: ChartLineIcon
+        // },
+         {
             title: "Trash",
             url: "/trash",
             icon: Trash

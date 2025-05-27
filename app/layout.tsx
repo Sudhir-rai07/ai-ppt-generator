@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SSD - AI PPT Generator",
+  title: "PresentAI - AI PPT Generator",
   description: "Build AI powered PPT Presentation",
 };
 
